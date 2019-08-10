@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+
 * {
   /* border: 1px solid red; */
   box-sizing: border-box;
@@ -6,25 +9,61 @@
 
 /* my sizes */
 :root {
-  --polaroid-width: 200px;
+  --polaroid-width: 240px;
   --badge-size: 48px;
   --polaroid-corners: calc(var(--badge-size) / 2);
-  --border-color: #808080;
+  --border-color: #333;
 }
 
 body {
   background: #eeeeee;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+
+  font-family: "Roboto Condensed", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   line-height: 1.5em;
 }
+h1 {
+  font-size: 3em;
+  font-family: "Lobster", cursive;
+  text-align: center;
+}
+h2 {
+  font-size: 1.8em;
+  font-family: "Lobster", cursive;
+}
+h3 {
+  font-size: 1.8em;
+  font-family: "Lobster", cursive;
+  text-decoration: underline;
+}
 
-/* main container */
-#gridify {
+hr {
+  max-width: 400px;
+  border: 2px solid var(--border-color);
+  border-radius: 2px;
+}
+.header {
+  width: 860px;
+  overflow: hidden;
+  /* border: 1px solid var(--border-color); */
+  /* width: var(--polaroid-width); */
+  /* background-color: white; */
+  /* border-radius: var(--polaroid-corners); */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* center */
+  display: block;
+  margin: 0px auto;
+  transition: all 0.5s ease;
+  padding: 0px 00px;
+}
+
+/* main grid container */
+.gridify {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, var(--polaroid-width));
+  grid-template-columns: repeat(4, var(--polaroid-width));
   justify-content: center;
+  margin: auto 40px;
 }
 
 .centered {
@@ -41,7 +80,7 @@ div.polaroid {
   width: var(--polaroid-width);
   background-color: white;
   border-radius: var(--polaroid-corners);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   /* center */
   display: block;
   margin: 10px auto 25px auto;
@@ -49,16 +88,16 @@ div.polaroid {
 }
 
 .polaroid.highlight {
-  outline: red;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
-  transform: scale(1.01);
-  transition: all 0.5s ease;
+  /* let's only show the box shadow when highlighted */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4); */
+  /* transform: scale(1.01); */ /* skip scaling at the moment */
 }
 
 div.polaroid img {
   display: block;
   border-bottom: 1px solid var(--border-color);
-  height: 300px;
+  height: 360px;
   /* this centers image nicely even when too large for div*/
   margin-left: 50%;
   transform: translateX(-50%);
@@ -91,11 +130,10 @@ div.badge {
 .badge.highlight {
   background-color: #101010;
   color: white;
-  border: none;
   transform: scale(1.2) !important;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 25%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20%;
 }
 
 .description {
@@ -106,11 +144,12 @@ div.badge {
 .description p {
   margin: 0;
   padding: 10px;
-  text-align: center;
+  text-align: justify;
+  font-size: 16px;
   width: 100%;
   background-color: white;
 }
 
 .description p:nth-of-type(2n) {
-  background-color: #ddd;
+  background-color: #eee;
 }

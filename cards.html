@@ -4,21 +4,33 @@
 <head>
   <title>Cards</title>
   <link rel="stylesheet" type="text/css" href="cardstyle.css" />
-
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-  <div id="gridify">
+  <!-- <div class="gridify" style="grid-template-columns: repeat(3, var(--polaroid-width))"> -->
+
+<div class="header">
+<h1>Hello World</h1>
+<p>Nisi deserunt voluptate esse velit elit do mollit dolor. Minim esse ad enim nostrud anim commodo amet sint pariatur aliquip magna. Occaecat ullamco exercitation sint aliquip minim in anim occaecat et aliquip enim veniam qui. Anim laboris amet eu irure ad cupidatat sit sunt qui qui ut. Labore culpa quis pariatur quis labore occaecat nostrud duis irure. </p>
+</div>
+<hr>
+<div class="header">
+    <h2>Testing</h1>
+    <p>Consectetur proident reprehenderit exercitation elit culpa elit ullamco enim velit excepteur duis proident tempor consectetur.</p>
+    </div>
+    <div class="gridify" >      
     <div class="polaroid" data-group="A">
       <div>
         <img src="img/random (1).jpg" alt="alter" />
         <div class="badge" data-rating="5" contentEditable="true">5</div>
       </div>
       <div contentEditable="true" class="description">
-        <p>Hello World</p>
-        <p>Hello World</p>
-        <p>Hello World</p>
+        <h3>Title</h3>
+        <p>Year: 1234</p>
+        <p>Director: John Hancock</p>
+        <p>Starring: Rollo Tamasi</p>
         <p>Hello World</p>
         <p>Hello World</p>
       </div>
@@ -31,6 +43,7 @@
       </div>
 
       <div class="description ">
+          <h3>Title</h3>
         <p>Goodbye world</p>
       </div>
     </div>
@@ -41,11 +54,11 @@
         <div class="badge" data-rating="3">5</div>
       </div>
       <div class="description">
-        <p>Hello World</p>
+        <p><em>Lorem:</em> Do laborum aliquip anim ut cupidatat esse dolor reprehenderit in exercitation. Culpa adipisicing voluptate quis velit officia sit dolor occaecat nostrud veniam. Mollit officia sint in anim velit ullamco veniam occaecat nulla. In est ut mollit dolore sit eiusmod magna irure. Pariatur consectetur nisi nostrud consectetur labore id. Magna irure aute amet fugiat esse culpa occaecat Lorem aliquip dolor. Sint voluptate laboris fugiat exercitation enim eiusmod commodo nisi.</p>
       </div>
     </div>
 
-    <div class="polaroid" data-group="B">
+    <div class="polaroid" data-group="A">
       <div>
         <img src="img/random (4).jpg" alt="alter" />
         <div class="badge">5</div>
@@ -55,6 +68,9 @@
       </div>
     </div>
 
+    
+    </div>
+    <div class="gridify" style="grid-template-columns: repeat(5, var(--polaroid-width))">
     <div class="polaroid" data-group="B">
       <div>
         <img src="img/random (3).jpg" alt="alter" />
