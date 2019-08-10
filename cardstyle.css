@@ -1,0 +1,116 @@
+* {
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* my sizes */
+:root {
+  --polaroid-width: 200px;
+  --badge-size: 48px;
+  --polaroid-corners: calc(var(--badge-size) / 2);
+  --border-color: #808080;
+}
+
+body {
+  background: #eeeeee;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 1.5em;
+}
+
+/* main container */
+#gridify {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, var(--polaroid-width));
+  justify-content: center;
+}
+
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* polaroid style cards */
+div.polaroid {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  width: var(--polaroid-width);
+  background-color: white;
+  border-radius: var(--polaroid-corners);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* center */
+  display: block;
+  margin: 10px auto 25px auto;
+  transition: all 0.5s ease;
+}
+
+.polaroid.highlight {
+  outline: red;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+  transition: all 0.5s ease;
+}
+
+div.polaroid img {
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+  height: 300px;
+  /* this centers image nicely even when too large for div*/
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+div.badge {
+  position: absolute;
+  border: 1px solid var(--border-color);
+  background: #f2f2f2;
+  border-radius: 100%;
+  width: var(--badge-size);
+  height: var(--badge-size);
+  /* get the half size for easy calculation */
+  --half-badge-size: calc(var(--badge-size) / -2);
+  bottom: var(--half-badge-size);
+  left: calc(calc(var(--polaroid-width) / 2) + var(--half-badge-size));
+  /* align vertically with grid */
+  /* seeing as we're using grid we'll align all here */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  z-index: 1;
+
+  font-size: calc(var(--badge-size) * 0.66);
+  font-weight: bold;
+}
+
+.badge.highlight {
+  background-color: #101010;
+  color: white;
+  border: none;
+  transform: scale(1.2) !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25%;
+}
+
+.description {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.description p {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+}
+
+.description p:nth-of-type(2n) {
+  background-color: #ddd;
+}
